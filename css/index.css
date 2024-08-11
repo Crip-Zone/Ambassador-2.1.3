@@ -498,7 +498,7 @@ a img {
 	clear: both;
 }
 .pagesection .pagelinks {
-	display: inline-block;
+	display: block;
 	float: left;
 }
 .pages::after, .jump_to::after, .code::after,
@@ -990,6 +990,20 @@ a[class^="mobile_generic_menu_"] {
 .top_menu .login input {
 	width: 90%;
 }
+/* Note: The next declarations are for keyboard access with js disabled. */
+.dropmenu ul a:focus, .dropmenu ul ul a:focus {
+	margin-left: 9990px;
+	border: none;
+	width: 17em;
+}
+.dropmenu ul ul a:focus {
+	margin-left: 19950px;
+}
+/* Cancel those for hover and/or js access. */
+.dropmenu ul li:hover a:focus, .dropmenu ul li a:focus {
+	margin-left: 0;
+	width: auto;
+}
 /* Level 3 submenu wrapper positioning. */
 .dropmenu li ul ul {
 	margin: -2em 0 0 15.3em;
@@ -1408,6 +1422,15 @@ ul li.greeting {
 	margin: 0;
 	padding: 0;
 }
+
+/* the small stats */
+#index_common_stats {
+	margin: -4px 8px 6px 8px;
+	padding: 4px 0 0 0;
+	font-size: 0.9em;
+	border-top: 1px solid #000;
+}
+
 .fix_rtl_names {
 	display: inline-block;
 }
@@ -4143,7 +4166,9 @@ h3.profile_hd::before,
 	background-image: linear-gradient(#e2e9f3 0%, #fff 70%);
 }
 .notify_dropdown span {
-	font-size: 0.9em;
+ font-size: 0.9em;
+ display: block;
+ max-width: 500px;
 }
 
 /* Some new stuff */
@@ -4474,4 +4499,3 @@ input[type="radio"] { /* change "blue" browser chrome to gold */
     ::-webkit-scrollbar-button:vertical:single-button:increment:hover {
       border-color: #ba964f transparent transparent transparent;
     }	 
-}
